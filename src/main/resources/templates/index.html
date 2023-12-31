@@ -1,10 +1,328 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8">
+    <title>Hospital</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Red+Rose:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Start of Async Drift Code -->
+    <!-- End of Async Drift Code -->
 </head>
+
 <body>
-$END$
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+</div>
+<!-- Spinner End -->
+
+<!-- Brand Start -->
+<div class="container-fluid  text-white pt-4 pb-5 d-none d-lg-flex" id="color">
+    <div class="container pb-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex">
+                <img src="img/call.gif"/>
+                <div class="ms-3">
+                    <h5 class="text-white mb-0">Call Now</h5>
+                    <span>8299890048</span>
+
+                </div>
+            </div>
+            <div class="con">
+                <div class="row">
+                    <div class="neons col-12">
+                        <h1><em>G-Hospital</em></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <img src="img/mail.gif"/>
+                <div class="ms-3">
+                    <h5 class="text-white mb-0">Mail Now</h5>
+                    <span>Leila@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Brand End -->
+
+<!-- About Start -->
+<div class="container-fluid py-5" id="color">
+    <div class="container" id="about">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="row g-0">
+                    <div class="col-6">
+                        <img class="img-fluid" src="img/banner-4.png">
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid" src="img/banner-1.png">
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid" src="img/ui.jpg">
+                    </div>
+                    <div class="col-6">
+                        <div class="bg-primary w-100 h-100 mt-n5 ms-n5 d-flex flex-column align-items-center justify-content-center">
+                            <div class="icon-box-light">
+                                <i class="bi bi-award text-dark"></i>
+                            </div>
+                            <h1 class="display-1 text-white mb-0" data-toggle="counter-up">25</h1>
+                            <small class="fs-5 text-white">Years Experience</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <h4 class="button-85">Welcome to Your Application</h4>
+                <p class="mb-4" id="color-2">Bienvenue sur la plateforme qui réunit les cœurs généreux et les besoins pressants au sein de notre communauté. Nous sommes ravis de vous accueillir dans cet espace dédié à la solidarité et à l'entraide. Que vous soyez passionné par le bénévolat ou que vous recherchiez une assistance précieuse, notre application est conçue pour connecter ceux qui veulent faire la différence avec ceux qui en ont besoin.</p>
+                <div class="row g-4 g-sm-5 justify-content-center">
+                    <div class="col-sm-6">
+                        <div class="about-fact btn-square flex-column rounded-circle bg-primary ms-sm-auto">
+                            <p class="text-white mb-0">Bénévoles</p>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">234</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-start">
+                        <div class="about-fact btn-square flex-column rounded-circle bg-secondary me-sm-auto">
+                            <p class="text-white mb-0">Demande D'aides</p>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">700</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="about-fact mt-n130 btn-square flex-column rounded-circle bg-dark mx-sm-auto">
+                            <p class="text-white mb-0">Valideurs</p>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">578</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Features Start -->
+<div class="container-fluid py-5">
+    <div class="container" id="Features">
+        <div class="row g-0 feature-row">
+            <div class="col-md-4 col-lg-6 wow fadeIn" data-wow-delay="0.1s" id="ty">
+                <div class="feature-item border h-100 p-5">
+                    <div class="icon-box-primary mb-4">
+                        <i class="bi bi-award text-dark"></i>
+                    </div>
+                    <button class="button-85" data-bs-toggle="modal" data-bs-target="#loginModal"><h5>Devenir bénévole</h5></button>
+                    <p class="mb-0">Materner des tout-petits, échanger avec des adolescents, distraire des adultes ou des personnes âgées… dans toutes les régions, les hôpitaux ont besoin de bénévoles. N’hésitez pas à vous rapprocher de l’association qui correspond le plus à vos envies et vérifiez si les besoins correspondent au temps que vous êtes prêt à offrir.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-6 wow fadeIn" data-wow-delay="0.3s" id="ty">
+                <div class="feature-item border h-100 p-5">
+                    <div class="icon-box-primary mb-4">
+                        <i class="bi bi-people text-dark"></i>
+                    </div>
+                    <h5><button class="button-85" data-bs-toggle="modal" data-bs-target="#CliModal">Demande D'aide</button></h5>
+                    <p class="mb-0">Dans notre société, plusieurs personnes se trouvent isolées
+                        – Famille éloignée
+                        – Problèmes de santé invalidants
+                        – Hospitalisations moyenne voire longues durées
+                        – Récupérer un colis pour une personne hospitalisée
+                        – Chercher un colis pour une personne âgée
+                        – Laver ses vêtements pendant une hospitalisation
+                        – …etc</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Features End -->
+
+<!-- Team Start -->
+<div class="container-fluid container-team py-5">
+    <div class="container pb-5" id="team">
+        <div class="row g-5 align-items-center mb-5">
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
+                <img class="img-fluid w-100" src="img/banner-5.png" alt="">
+            </div>
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="display-6 mb-3">Mère Teresa</h1>
+                <h3 class="mb-3">Biography</h3>
+                <p class="mb-4">Mère Teresa, également connue sous le nom de Sainte Teresa de Calcutta, était une religieuse catholique albanaise-indienne, née Anjezë Gonxhe Bojaxhiu le 26 août 1910 à Skopje, aujourd'hui la capitale de la Macédoine du Nord.</p>
+                <p class="mb-4">Cette religieuse catholique albanaise a consacré sa vie aux pauvres et aux malades à Calcutta, en Inde. Elle a fondé la congrégation des Missionnaires de la Charité et a reçu le prix Nobel de la paix en 1979.</p>
+                <div class="d-flex">
+                    <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg-square btn-primary me-2" href=""><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+<!-- Copyright Start -->
+<div class="container-fluid copyright bg-dark text-white-50 py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">&copy; <a >Your Site Name</a>. All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                <p class="mb-0">Designed by <a >Khira Leila</a><br>Distributed by <a >Yassir Touili</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+<div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <form method='post' th:action="@{saveBenevole}">
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center">
+                        <i class="bi bi-person-circle fs-3 me-2"></i>Devenir Bénévole</h5>
+                    <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Nom</label>
+                                <input type="text" name="name" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Prénom</label>
+                                <input type="text" name="prenom" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 p-0 mb-3">
+                                <label class="form-label" >Age</label>
+                                <input type="number" name="age" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 p-0 mb-3">
+                                <label class="form-label">Numéro de Téléphone</label>
+                                <input type="text" name="tele" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Adresse</label>
+                                <input type="text" name="adresse" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Date de disponibilité</label>
+                                <input type="date" name="dateofDispo" required class="form-control shadow-none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between m-4">
+                    <button type="submit" name="login" class="btn btn-dark  shadow-none">Enregister</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="CliModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form method="post" th:action="@{saveDemande}">
+                <div class="modal-header">
+                    <!--span class="badge text-bg-light text-dark mb-3 text-wrap lh-base"></span-->
+                    <h5 class="modal-title d-flex align-items-center">
+                        <i class="bi bi-person-lines-fill fs-3 me-2"></i>
+                        Passer une Demande
+                    </h5>
+                    <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Nom</label>
+                                <input type="text" name="name" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Prénom</label>
+                                <input type="text" name="prenom" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 p-0 mb-3">
+                                <label class="form-label" >Age</label>
+                                <input type="number" name="age" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 p-0 mb-3">
+                                <label class="form-label">Numéro de Téléphone</label>
+                                <input type="text" name="tele" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Adresse</label>
+                                <input type="text" name="adresse" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Date de la Demande</label>
+                                <input type="date" name="demande_date" required class="form-control shadow-none">
+                            </div>
+                            <div class="col-md-6 ps-0 mb-3">
+                                <label class="form-label">Description</label>
+                                <input type="text" name="description" required class="form-control shadow-none">
+                            </div>
+                            <div class="mb-4">
+                                <label for="disabledSelect" class="form-label">Status de la Demande</label>
+                                <select id="disabledSelect" class="form-select" type="text" name="status">
+                                    <option> </option>
+                                    <option>en_attente</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center my-l">
+                        <button type="submit" name='adduser' class="btn btn-dark shadow-none">Enregistrer</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
 </body>
 </html>
